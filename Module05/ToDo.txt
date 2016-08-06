@@ -1,0 +1,6 @@
+Clean House,low
+Pay Bills,high
+Get Dog Food,high
+Homework,high
+Feed dogs,high
+Cook dinner,high

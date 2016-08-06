@@ -1,0 +1,7 @@
+Hackathon,high
+Pay Bills,high
+Clean House,low
+Feed dogs,high
+Homework,high
+Get Dog Food,high
+Task: Peer Review, Priority: high

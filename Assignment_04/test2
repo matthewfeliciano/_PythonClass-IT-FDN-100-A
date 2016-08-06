@@ -1,0 +1,60 @@
+'''----------------------------------------------------------------
+Dev:MFeliciano
+Assignment04:
+1.	Create new program that asks the user for the name of a
+household item, and then asks for its estimated value.
+Store, both pieces of data in a text file called, HomeInventory.txt
+----------------------------------------------------------------'''
+
+# First assign values to the variables
+objFile = "Variable for our file."
+strData = "Row of data from the text file"
+tplRow = "Array of data"
+tplTable = "Table holding our data"
+strItem = "Text for the Household Item"
+strValue = "Estimated dollar amount."
+
+# First we open our text file to get the header data.
+objFile = open("C:\\Users\\feliciam\\Documents\\_PythonClass\\Assignment_04\\Module04\\HomeInventory.txt", "r")
+strData = objFile.readline()
+tplRow = ((strData.split(",")[0]).strip(), (strData.split(",")[1]).split()) # Split the row on the commas
+tplTable = tplRow,
+# Next we get the rest of the data rows from the file.
+for line in objFile:
+    strData = line
+    tplRow = (strData.split(",")[0]).strip(), (strData.split(",")[1]).split() # Split the row on the commas
+    tplTable += tplRow
+print(tplTable)
+objFile.close()
+
+# 2. Ask the user for new entries and stores them in the 2 dimensional Tuple.
+print("Type in 'Item' and 'Estimated Value' for household items.")
+print("Type 'Exit' to quit.")
+
+# This while loop asks users to enter a household item and estimated value.
+while (True):
+    strItem = str(input("Enter item: "))
+    if(strItem.lower() == "exit"):
+        break
+    else:
+        strValue = str(input("Enter estimated value: "))
+        # Here we store the data in a two dimensional Tuple
+        tplRow = (strItem, strValue) # Break entry into two dimensions.
+        tplTable += tplRow, # Write back to table
+
+# Ask the user, when the program exits, if they would like to save the data to a text file called, HomeInventory.txt.
+strSave = input("\nType 'save' to save to 'HomeInventory.txt' or press 'Enter' to exit without saving.")
+
+# If the user types 'save' open the file HomeInventory.txt.
+if (strSave == 'save'):
+    objFile = open("C:\\Users\\feliciam\\Documents\\_PythonClass\\Assignment_04\\Module04\\HomeInventory.txt", "w")
+    # Append all of the items added by the user to the HomeInventory.txt file.
+    for row in tplTable:
+        objFile.write(str(row[0]) + "," + str(row[1]) + "\n")
+    # Close the file.
+        objFile.close()
+    # Alert user that file has saved.
+    print("\nData saved to HomeInventory.txt")
+else:
+    # Alerts user that data was not saved.
+    print("\nData was NOT saved!")

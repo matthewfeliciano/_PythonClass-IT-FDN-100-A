@@ -1,0 +1,14 @@
+Item: CameraValue: 500
+Item: LaptopValue: 1200
+Item: Camera Value: 500
+Item: Laptop Value: 1200
+Item: Laptop-Value: $1200.50
+Item: Bow Value: $600
+Item: Arrows Value: $100
+Item: Binoculars Value: $175
+Item: Laptop Value: $1200
+Item: Dog Value: $price less
+Item: Ruby Value: $free
+Item: Motorcycle Value: $4500
+('Item', 'Value')
+('Honda CR-V', 27000.0)
