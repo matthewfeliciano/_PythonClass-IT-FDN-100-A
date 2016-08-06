@@ -1,25 +1,18 @@
-# Display the current data
-# The file must be created first before this will work,
-#(and a+ does not work here!)
+import pickle
 
-try:
-    objFile = open("Customerzzzzz.txt", "r+")#Bad file name
-    print("Here is the current data:")
-    print(objFile.read())
+intId = int(input("Enter an Id: "))
+strName = str(input("Enter a Name: "))
+lstCustomer = [intId, strName]
+print(lstCustomer)
 
-    print("Type in a Customer Id and Name you want to add to the file")
-    print("(Enter 'Exit' to quit!)")
+#Now we store the data with the pickle.dump method
+objFile = open("Customers.dat", "ab")
+pickle.dump(lstCustomer, objFile)
+objFile.close()
 
-    while(True):
+#And, we read the data back with the same pickle.load method
+objFile = open("Customers.dat", "rb")
+objFileData = pickle.load(objFile) #Note that load() only load one row of data.
+objFile.close()
 
-      strUserInput = input("Enter the Id and Name (ex. 1,Bob Smith): ")
-      if(strUserInput.lower() == "exit"): break
-      else: objFile.write(strUserInput + "\n")
-
-    print("Here is this data was saved:")
-    print(objFile.read())
-    objFile.close()
-except Exception as e:
-    print("Python reported the following error: " + str(e))
-finally:
-    print("The program has stopped")
+print(objFileData)
