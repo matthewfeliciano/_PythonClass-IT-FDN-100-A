@@ -28,7 +28,7 @@ def ReadAllFileData(File, Messasge="Contents of Files:"):
         print("----------------------------")
         File.seek(0)
         print(File.read())
-    except  Exception as e:
+    except Exception as e:
         print("Error: ", e.__str__)
 
 # I/O
