@@ -38,7 +38,7 @@
 
 #---------------------------------------
 
-objFileName = "C:\\Users\\feliciam\\Documents\\_PythonClass\\Module05\\ToDo.txt"
+objFileName = "ToDo.dat"
 strData = ""
 dicTable = {}
 
