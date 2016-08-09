@@ -15,7 +15,7 @@
 import pickle
 import os
 
-sale_items_filename = 'high_scores.dat'
+sale_items_filename = 'SaleItems.dat'
 
 lstForSale = []
 
